@@ -23,8 +23,8 @@ public class slidingMinSwapToBringElementTogether {
         }
 
         int minm = window - lessThanKCount;
-        for (int i = k; i < n; i++) {
-            if(arr[i-k]<=k){
+        for (int i = window; i < n; i++) {
+            if(arr[i-window]<=k){
                 lessThanKCount--;
             }
             if(arr[i]<=k){
@@ -53,8 +53,8 @@ public class slidingMinSwapToBringElementTogether {
     consider the above example 2,1,5,6,3 --> here the first window of 2,1,5 contains 2 elements <=k(3) so we
     know that by only swapping 5 our job will be done and that count of swap will be window-lessThanKCount)
 
-    The next step will be to run loop from i=k to i<n and at each i we will check broadly two things:
-        1. if(arr[i-k]<=k) lessThanKCount--; --> if when we leave the previous elements and if it does contain
+    The next step will be to run loop from i=window to i<n and at each i we will check broadly two things:
+        1. if(arr[i-window]<=k) lessThanKCount--; --> if when we leave the previous elements and if it does contain
                                                  element<=k we will subtract from the count &
         2. if(arr[i]<=k) lessThanKCount++; --> if when we consider new element in the window if it does contain
                                                the element<=k we will increment the count by 1.
