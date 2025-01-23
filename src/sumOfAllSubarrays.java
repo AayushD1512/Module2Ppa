@@ -18,6 +18,22 @@ public class sumOfAllSubarrays {
     }
 }
 
+/*
+Code for modulo operator:
+long mod = 1000000000+7;
+        long sum = 0;
+
+        for(int i=0;i<n;i++){
+
+            long contribution = ((i+1)%mod * (n-i)%mod)%mod;
+            sum = (sum + ((arr[i] % mod) * (contribution % mod) % mod)) % mod;
+
+
+        }
+
+        System.out.print(sum % mod);
+ */
+
 
 /*
     A naive and optimal approach is being mathematical about it:
